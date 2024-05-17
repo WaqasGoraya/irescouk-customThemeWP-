@@ -8,9 +8,16 @@
     <div class="container-fluid bg-primary text-white d-none d-lg-flex">
         <div class="container py-3">
             <div class="d-flex align-items-center">
-                <a href="#">
+                <?php if (get_header_image()) : ?>
+                    <div id="site-header">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" rel="home">
+                            <img src="<?php header_image(); ?>" width="200" height="auto" alt="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
+                        </a>
+                    </div>
+                <?php endif; ?>
+                <!-- <a href="#">
                     <h2 class="text-white fw-bold m-0">GrowMark</h2>
-                </a>
+                </a> -->
                 <div class="ms-auto d-flex align-items-center">
                     <small class="ms-4"><i class="fa fa-map-marker-alt me-3"></i>123 Street, New York, USA</small>
                     <small class="ms-4"><i class="fa fa-envelope me-3"></i>info@example.com</small>
@@ -30,9 +37,17 @@
     <div class="container-fluid bg-white sticky-top">
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-white navbar-light p-lg-0">
-                <a href="#" class="navbar-brand d-lg-none">
+                <!-- <a href="#" class="navbar-brand d-lg-none">
                     <h1 class="fw-bold m-0">GrowMark</h1>
-                </a>
+                </a> -->
+                <?php if (get_header_image()) : ?>
+                    <div id="site-header">
+                        <a href="<?php echo esc_url(home_url('/')); ?>" class="navbar-brand d-lg-none">
+                            <img src="<?php header_image(); ?>" width="200" height="auto" alt="<?php echo esc_attr(get_bloginfo('name', 'display')); ?>">
+                        </a>
+                    </div>
+                <?php endif; ?>
+
                 <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                     <span class="navbar-toggler-icon"></span>
                 </button>
